@@ -6,7 +6,7 @@ if (!fs.existsSync('data')) {
     fs.mkdirSync('data');
 }
 
-const child = spawn('mongod', ['--config', 'mongodb.conf']);
+const child = spawn('./mongod', ['--config', 'mongodb.conf'], {shell: true});
 
 const logLevels = {
     levels: { critical: 0, error: 1, warning: 2, info: 3},
